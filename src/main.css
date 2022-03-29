@@ -5,9 +5,12 @@ body {
 }
 
 .form {
-  padding: 8px
+  padding: 8px;
 }
 
+.filters {
+  padding: 10px 0;
+}
 .todos {
   margin: 0;
   padding: 0;
