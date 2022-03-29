@@ -21,7 +21,38 @@ addListener("keyup", '[data-element="addTodoInput"]', (e) => {
     store.dispatch(todoActions.add(todoInput.value));
   }
 });
+addListener("click", '[data-element="filterTodo"]', (e) => {
+  const id = e.target.id;
+  const ul = document.querySelector(".todos");
+  const todos = ul.childNodes;
+  todos.forEach(function (todo) {
+    if (todo.nodeName === "LI") {
+      switch (id) {
+        case "showAll":
+          todo.style.display = "list-item";
+          break;
 
+        case "showOpen":
+          if (todo.classList.contains("todos__item_checked")) {
+            todo.style.display = "list-item";
+          } else {
+            todo.style.display = "none";
+          }
+          break;
+
+        case "showClosed":
+          if (todo.classList.contains("todos__item_checked")) {
+            todo.style.display = "none";
+          } else {
+            todo.style.display = "list-item";
+          }
+          break;
+      }
+    }
+  });
+  //todoActions.filter(id);
+  //store.dispatch();
+});
 addListener("click", '[data-element="toggleTodo"]', (e) => {
   const id = Number(e.target.dataset.id);
   store.dispatch(todoActions.toggle(id));

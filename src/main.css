@@ -8,9 +8,6 @@ body {
   padding: 8px;
 }
 
-.filters {
-  padding: 10px 0;
-}
 .todos {
   margin: 0;
   padding: 0;
@@ -20,7 +17,9 @@ body {
 .todos__item {
   margin: 8px;
 }
-
+.filters {
+  padding: 10px 0;
+}
 .todos__item_checked {
   background-color: #9ea;
 }
