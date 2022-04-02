@@ -1,4 +1,6 @@
-import createStore from './createStore';
-import todoReducer, { initialState as todoInitialState } from './todos';
+import todoReducer from "./todos";
 
-export default createStore(todoReducer, todoInitialState);
+const { createStore } = require("redux");
+const store = createStore(todoReducer);
+
+export default store;

@@ -1,4 +1,4 @@
-import store from "./store";
+import store from "./store/index.js";
 import * as todoActions from "./store/todoActions";
 
 function addListener(eventName, selector, callback) {
@@ -21,6 +21,11 @@ addListener("keyup", '[data-element="addTodoInput"]', (e) => {
     store.dispatch(todoActions.add(todoInput.value));
   }
 });
+addListener("click", '[data-element="toggleTodo"]', (e) => {
+  const id = Number(e.target.dataset.id);
+  store.dispatch(todoActions.toggle(id));
+});
+
 addListener("click", '[data-element="filterTodo"]', (e) => {
   const id = e.target.id;
   const ul = document.querySelector(".todos");
@@ -50,10 +55,4 @@ addListener("click", '[data-element="filterTodo"]', (e) => {
       }
     }
   });
-  //todoActions.filter(id);
-  //store.dispatch();
-});
-addListener("click", '[data-element="toggleTodo"]', (e) => {
-  const id = Number(e.target.dataset.id);
-  store.dispatch(todoActions.toggle(id));
 });

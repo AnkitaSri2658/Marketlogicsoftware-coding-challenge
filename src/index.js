@@ -1,10 +1,8 @@
-import './main.css';
+import "./main.css";
+import render from "./render";
+import "./registerEventListeners";
+import store from "./store/index.js";
+const rootElement = document.getElementById("demo");
 
-import store from './store';
-import render from './render';
-import './registerEventListeners';
-
-const rootElement = document.getElementById('demo');
-
-store.subscribe(state => render(rootElement, state));
+store.subscribe(() => render(rootElement, store.getState()));
 render(rootElement, store.getState());

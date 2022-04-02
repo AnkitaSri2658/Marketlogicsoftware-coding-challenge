@@ -39,6 +39,8 @@ export default (state = initialState, action) => {
         title: action.title,
         completed: false,
       });
+      return state;
+      console.log(state);
       break;
     case "TOGGLE":
       for (let todo of state.todos) {
@@ -47,6 +49,10 @@ export default (state = initialState, action) => {
           break;
         }
       }
+      return state;
+      break;
+    default:
+      return state;
       break;
   }
 };
