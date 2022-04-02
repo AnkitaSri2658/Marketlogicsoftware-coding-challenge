@@ -22,25 +22,13 @@ Then application is available on `http://localhost:8080`.
 
 Here is a simple todo list, written with minimal use of libraries.
 
-In the tasks below, it is proposed to extend and improve the application. Each task covers some part of
-frontend engineering. 
-
-Please read tasks carefully and give us your time estimation. If you have any questions, please do not hesitate
-to contact us.
-
-After solving of all tasks please make a pull request. Please for each task create separate commit with
-same name as title of task.
-
 ### JS-101: Add item on press Enter
 
-Our users are complaining, that they are used to submit value on pressing Enter, but it doesn't work
-in our application.
-
-Please provide ability to add item with pressing `enter` key.
+Provided ability to add item with pressing `enter` key.
 
 ### JS-102: Add filters
 
-Please provide such filters: 
+Provided the following filters: 
 - "Show all" (default)
 - "Show open" (display all items with `done: false`)
 - "Show closed" (display all items with `done: true`)
@@ -49,10 +37,7 @@ Filters should be implemented with radio buttons.
 
 ### JS-201: Replace the store
 
-When our developers finished building the store, 
-they realized that there was already a well-known library with very similar functionality.
-
-Please replace our self-written solution with redux.
+Replaced store with Redux, to run this task take code from same commit and please remove creatStore.js file.
 
 ### JS-202: Optimize rendering
 
